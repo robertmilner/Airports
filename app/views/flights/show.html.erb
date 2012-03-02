@@ -1,0 +1,22 @@
+<h1>Flight Details</h1>
+<div class="google-map">
+	<%= gmaps( 
+		:polylines => { :data => @map }
+		) 
+	%>
+</div>
+<div class="details">
+	<table class="table table-condensed">
+
+			<tr>
+				<th rowspan="2" class="key"><p>Flight #: <%= @flight.number %></p></th>
+				<th rowspan="2" class="key"><p>Distance: <%= @flight.distance %> Miles</p></th>
+				<th><%= format_time @flight.departs_at %></th>
+				<th><%= @flight.departure_airport.city %> to</th>
+			</tr>
+			<tr>
+				<td><%= format_time @flight.arrives_at %></td>
+				<td><%= @flight.arrival_airport.city %></td>
+			</tr>
+	</table>
+</div>

@@ -1,0 +1,14 @@
+<h1>Sign in</h1>
+<%= form_tag "/sessions" do %>
+<ul>
+	<li>
+		<%= label_tag :email %>
+		<%= text_field_tag :email %>
+	</li>
+	<li>
+		<%= label_tag :email %>
+		<%= password_field_tag :email %>
+	</li>
+</ul>
+<%= submit_tag "Sign in", :class => "btn" %>
+<% end %>
