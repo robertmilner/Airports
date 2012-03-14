@@ -30,4 +30,57 @@ class FlightsController < ApplicationController
 
     respond_with @flight
   end
+  
+  def new
+    @flight = Flight.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @flight }
+    end
+  end
+  
+  def edit
+    @flight = Flight.find(params[:id])
+  end
+
+  def create
+    @flight = Flight.new(params[:flight])
+
+    respond_to do |format|
+      if @flight.save
+        format.html { redirect_to @flight, notice: 'User was successfully created.' }
+        format.json { render json: @flight, status: :created, location: @flight }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @flight.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    @flight = Flight.find(params[:id])
+
+    respond_to do |format|
+      if @flight.update_attributes(params[:flight])
+        format.html { redirect_to @flight, notice: 'User was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @flight.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @flight = Flight.find(params[:id])
+    @flight.destroy
+
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+    end
+  end
+  
+  
 end

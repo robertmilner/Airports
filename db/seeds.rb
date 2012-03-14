@@ -28,7 +28,7 @@ all_airports = Airport.all
   flight.departure_airport = airports.first
   flight.departs_at = Time.parse("#{rand(23-0)}:00")
   flight.arrival_airport = airports.last
-  flight.distance = rand(3000-700) + 700
+  # flight.distance = rand(3000-700) + 700
   flight.save
 end
 

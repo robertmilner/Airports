@@ -44,6 +44,7 @@ GEM
       multi_json (~> 1.0)
     gmaps4rails (1.4.5)
       json
+    haversine (0.3.0)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.2)
@@ -111,6 +112,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.0.0)
   coffee-rails (~> 3.2.1)
   gmaps4rails (~> 1.4.5)
+  haversine
   jquery-rails
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)

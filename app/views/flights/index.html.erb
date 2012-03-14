@@ -12,15 +12,15 @@
 		</tr>
 	</thead>
 	<tbody>
-	<% @flights.each do |flight| %>
-		<tr>
-			<td><%= format_time flight.departs_at %></td>
-			<td><%= format_time flight.arrives_at %></td>
-			<td><%= link_to flight.number, flight %></td>
-			<td><%= flight.travel_time %></td>
-			<td><%= flight.departure_airport.city %> &ndash; <%= flight.departure_airport.code %></td>
-			<td><%= flight.arrival_airport.city %> &ndash; <%= flight.arrival_airport.code %></td>
-		</tr>
-	<% end %>
+  <% @flights.each do |flight| %>
+    <tr>
+        <td><%= format_time flight.departs_at %></td>
+        <td><%= format_time flight.arrives_at %></td>
+        <td><%= link_to flight.number, flight %></td>
+        <td><%= flight.travel_time %></td>
+        <td><%= flight.departure_airport.city %> &ndash; <%= flight.departure_airport.code %></td>
+        <td><%= flight.arrival_airport.city %> &ndash; <%= flight.arrival_airport.code %></td>
+    </tr>
+  <% end %>
 	</tbody>
 </table>
